@@ -1,0 +1,37 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.0.1'
+	id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.learn.sprint-boot'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '19'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'com.h2database:h2'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	//For swagger ui
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2'
+	//To provide a JSON response in XML format
+	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.14.1'
+	//For HATEOAS to provide links in response
+	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
+	//actuator
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	//HAL explorer to get all API data
+	implementation 'org.springframework.data:spring-data-rest-hal-explorer'
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
