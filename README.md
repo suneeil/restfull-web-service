@@ -1,6 +1,6 @@
 # restfull-web-service contains examples for
 
-* Contains Custom Exception Handling
+* Custom Exception Handling
 * Filtering response
 * Versioning
 * Basic API for GET, POST, DELETE
