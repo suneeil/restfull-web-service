@@ -29,7 +29,7 @@ public class UserResource {
     public EntityModel<User> retrieveUser(@PathVariable Integer id) {
         User user = userDaoService.getUser(id);
         if(user == null) {
-            throw new UserNotFoundException("id: "+ id);
+            throw new UserNotFoundException("user not found with id: "+ id);
         }
         EntityModel<User> entityModel = EntityModel.of(user);
         //To create links in response
@@ -46,8 +46,22 @@ public class UserResource {
     @PostMapping("/users")
     public ResponseEntity<User> createUser(@Validated @RequestBody User user) {
         User newUser = userDaoService.createUser(user);
+        //Note: to return the uri of the created user, e.g. after creating a new user you will get response as users/x e.g.users/4
+        // Note: ServletUriComponentsBuilder.fromCurrentRequest() >>> this will give uri of the current method i.e. /users
+        //Note: .path("/{id}") >> will append /{id} to /users >> /users/{id}
+        // buildAndExpand(newUser.getId()) >>> will replace the {id} value
         URI uriLocation = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newUser.getId()).toUri();
-        return ResponseEntity.created(uriLocation).build();
+        //ResponseEntity is used to send correct Response status
+        return ResponseEntity.created(uriLocation).build();//To make this method return 201 status we use ResponseEntity.created(null).build() will give 201
+    }
+
+    @GetMapping("/userId")
+    public User getUser(@RequestParam("uId") Integer userId) {
+        User user = userDaoService.getUser(userId);
+        if(user == null) {
+            throw new UserNotFoundException("user not found with  uId: "+ userId);
+        }
+        return user;
     }
 }
 
