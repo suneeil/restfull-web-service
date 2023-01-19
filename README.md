@@ -1,7 +1,7 @@
 # restfull-web-service
-* Contains Custom Exception Handling\n
-* Filtering response\n
-* Versioning\n
+* Contains Custom Exception Handling
+* Filtering response
+* Versioning
 * Basic API for GET, POST, DELETE
 * Accept QueryParam and Path params
 * Internalazation 
