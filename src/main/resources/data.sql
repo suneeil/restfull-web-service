@@ -1,0 +1,10 @@
+insert into user(id, name, location) values(10001,'Sunil', 'Bangalore');
+insert into user(id, name, location) values(10002,'Adam', 'LA');
+insert into user(id, name, location) values(10003,'Eve', 'Germany');
+insert into user(id, name, location) values(10004,'Paul', 'London');
+insert into user(id, name, location) values(10005,'Sara', 'Singapore');
+insert into user(id, name, location) values(10006,'Rosi', 'Italy');
+insert into post(id, description, user_id) values(10001,'I want to learn Spring boot', 10002);
+insert into post(id, description, user_id) values(10005,'I want to learn Dev Ops', 10006);
+insert into post(id, description, user_id) values(10003,'I want to learn Java', 10004);
+insert into post(id, description, user_id) values(10002,'I want to learn Python', 10004);

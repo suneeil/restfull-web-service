@@ -15,10 +15,10 @@ public class UserDaoService {
     private static Integer userId = 0;
 
     static {
-        users.add(new User(++userId, "Adam", LocalDate.now().minusYears(30)));
-        users.add(new User(++userId, "Eve", LocalDate.now().minusYears(10)));
-        users.add(new User(++userId, "Mark", LocalDate.now().minusYears(35)));
-        users.add(new User(++userId, "Paul", LocalDate.now().minusYears(20)));
+        users.add(new User(++userId, "Adam", "Germany"));
+        users.add(new User(++userId, "Eve", "London"));
+        users.add(new User(++userId, "Mark", "Paris"));
+        users.add(new User(++userId, "Paul", "LA"));
     }
 
     public List<User> getAllUsers() {
