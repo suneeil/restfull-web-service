@@ -15,8 +15,10 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	//To have Authorization for the API
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	runtimeOnly 'com.h2database:h2'
+	//runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	//For swagger ui
@@ -29,6 +31,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	//HAL explorer to get all API data
 	implementation 'org.springframework.data:spring-data-rest-hal-explorer'
+	//TO connect to external MY SQL Database
+	implementation 'mysql:mysql-connector-java:8.0.32'
 
 }
 
