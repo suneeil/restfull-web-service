@@ -1,5 +1,7 @@
 # restfull-web-service contains examples for
 
+* JPA
+* Connect to MY SQL via Docker
 * Custom Exception Handling
 * Filtering response
 * Versioning
